@@ -1,50 +1,57 @@
 <template>
     <div class="home">
+
+        <!--导航栏-->
         <TopMenu choiceIndex="1"/>
-        <el-row type="flex"
-                justify="center">
-            <el-col :span="10">
-                <div class="left-box">
-                    <div class="split-line"></div>
-                    <div v-for="n in 10"
-                         class="have-img"
-                         :key="n">
-                        <PostListItem :postIntro="t_post"></PostListItem>
-                        <!-- <el-divider></el-divider> -->
-                    </div>
-                </div>
-            </el-col>
-            <el-col :span="4">
-                <div class="right-box">
-                    <div class="board">
-                        <el-image style="width: 280px; height: 55px"
-                                  src=""
-                                  fit="fit"></el-image>
-                        <el-image style="width: 280px; height: 55px"
-                                  src=""
-                                  fit="fit"></el-image>
-                        <el-image style="width: 280px; height: 55px"
-                                  src=""
-                                  fit="fit"></el-image>
-                        <el-image style="width: 280px; height: 55px"
-                                  src=""
-                                  fit="fit"></el-image>
-                    </div>
 
-                    <!-- 首页右侧 App 下载提示 -->
-                    <router-link to="/downloadapp" id="index-aside-download-qrbox" class="download">
-                        <img src="../assets/img/ewm.png" alt="Download index side qrcode" class="qrcode">
-                        <div class="info">
-                            <div class="title">下载简书手机App<i class="iconfont ic-link"></i></div>
-                            <div class="description">随时随地发现和创作内容</div>
+        <div class="row">
+            <el-row type="flex"
+                    justify="center">
+                <el-col :span="10">
+                    <div class="left-box">
+                        <div class="split-line"></div>
+                        <div v-for="n in 10"
+                             class="have-img"
+                             :key="n">
+                            <PostListItem :postIntro="t_post"></PostListItem>
+                            <!-- <el-divider></el-divider> -->
                         </div>
-                    </router-link>
+                    </div>
+                </el-col>
+                <el-col :span="4">
+                    <div class="right-box">
+                        <div class="board">
+                            <el-image style="width: 280px; height: 55px"
+                                      src="https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
+                                      fit="fit"></el-image>
+                            <el-image style="width: 280px; height: 55px"
+                                      src="https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+                                      fit="fit"></el-image>
+                            <el-image style="width: 280px; height: 55px"
+                                      src="https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+                                      fit="fit"></el-image>
+                            <el-image style="width: 280px; height: 55px"
+                                      src="https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+                                      fit="fit"></el-image>
+                        </div>
+
+                        <!-- 首页右侧 App 下载提示 -->
+                        <router-link to="/downloadapp" id="index-aside-download-qrbox" class="download">
+                            <img src="../assets/img/ewm.png" alt="Download index side qrcode" class="qrcode">
+                            <div class="info">
+                                <div class="title">下载简书手机App<i class="iconfont ic-link"></i></div>
+                                <div class="description">随时随地发现和创作内容</div>
+                            </div>
+                        </router-link>
+
+                        <!-- 推荐作者 -->
+                        <recommendUsers :usersList="t_usersList"></recommendUsers>
 
 
-
-                </div>
-            </el-col>
-        </el-row>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
 
     </div>
 </template>
@@ -53,6 +60,7 @@
     // @ is an alias to /src
     import TopMenu from '@/components/TopMenu.vue'
     import PostListItem from '@/components/posts/PostListItem.vue'
+    import recommendUsers from '@/components/panels/RecommendUsers.vue'
 
     export default {
         data() {
@@ -71,13 +79,38 @@
                     likes: 24,
                     views: 624,
                     admiration: 0
-                }
+                },
+                t_usersList : [{
+                    name: "董克平日记",
+                    avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+                    url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+                    intro: "写了958k字 · 3.7k喜欢",
+                },
+                    {
+                        name: "董克平日记",
+                        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+                        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+                        intro: "写了958k字 · 3.7k喜欢",
+                    },
+                    {
+                        name: "董克平日记",
+                        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+                        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+                        intro: "写了958k字 · 3.7k喜欢",
+                    },
+                    {
+                        name: "董克平日记",
+                        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+                        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+                        intro: "写了958k字 · 3.7k喜欢",
+                    },]
             }
         },
         name: 'Home',
         components: {
             TopMenu,
-            PostListItem
+            PostListItem,
+            recommendUsers
         }
     }
 </script>
@@ -100,6 +133,7 @@
 
     .right-box {
         margin-left: 4.16667%;
+        padding: 30px 0 0;
     }
 
     .download {
@@ -110,6 +144,7 @@
         border-radius: 6px;
         background-color: #fff;
         float: left;
+        box-sizing: border-box;
         .qrcode {
             width: 60px;
             height: 60px;
@@ -131,5 +166,11 @@
                 color: #999;
             }
         }
+    }
+
+    .board {
+        margin-top: -4px;
+        padding-bottom: 4px;
+        min-height: 228px;
     }
 </style>

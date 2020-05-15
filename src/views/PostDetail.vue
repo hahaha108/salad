@@ -5,6 +5,113 @@
         <TopMenu/>
 
         <div class="row">
+            <div class="left-box">
+                <section class="ouvJEz">
+                    <h1 class="_1RuRku">三生三世枕上书续写（12）入梵音谷</h1>
+                    <div class="rEsl9f">
+                        <div class="_2mYfmT"><a class="_1OhGeD" href="/u/328e2abba0e6" target="_blank"
+                                                rel="noopener noreferrer"><img class="_13D2Eh"
+                                                                               src="https://upload.jianshu.io/users/upload_avatars/21183510/c04ba045-a776-432a-9440-81f20241f04a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+                                                                               alt=""></a>
+                            <div style="margin-left: 8px;">
+                                <div class="_3U4Smb"><span class="FxYr8x"><a class="_1OhGeD" href="/u/328e2abba0e6"
+                                                                             target="_blank" rel="noopener noreferrer">Dear深情的妍妍</a></span><a
+                                        class="_2edyx1 _1OhGeD"
+                                        href="https://www.jianshu.com/mobile/campaign/day_by_day/join?utm_medium=badge"
+                                        target="_blank" rel="noopener noreferrer"><img class="_1_2JEL"
+                                                                                       src="https://upload.jianshu.io/user_badge/3c9007f3-89e8-459f-b658-12fddff86fdd"
+                                                                                       alt="  "
+                                                                                       style="width: 16px; height: 16px; min-width: 16px; min-height: 16px;"></a>
+                                    <button data-locale="zh-CN" type="button" class="_3kba3h _1OyPqC _3Mi9q9 _34692-">
+                                        <span>关注</span></button>
+                                </div>
+                                <div class="s-dsoj"><span class="_3tCVn5"><i class="iconfont ic-paid1"></i><span>2</span></span>
+                                    <time datetime="2020-03-27T00:37:03.000Z">2020.03.27 08:37:03</time>
+                                    <span>字数 882</span><span>阅读 9,598</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <article class="_2rhmJa" v-html="t_note.data.free_content">
+                        <!--文章内容放在这里-->
+                        {{t_note.data.free_content}}
+                    </article>
+                    <div></div>
+                    <div class="_-0zx5e">禁止转载，如需转载请通过简信或评论联系作者。</div>
+                    <div class="_1kCBjS">
+                        <div class="_18vaTa">
+                            <div class="_3BUZPB">
+                                <div class="_2Bo4Th" role="button" tabindex="-1" aria-label="给文章点赞"><i
+                                        aria-label="ic-like" class="anticon">
+                                    <svg width="1em" height="1em" fill="currentColor" aria-hidden="true"
+                                         focusable="false" class="">
+                                        <use xlink:href="#ic-like"></use>
+                                    </svg>
+                                </i></div>
+                                <span class="_1LOh_5" role="button" tabindex="-1" aria-label="查看点赞列表">102人点赞<i
+                                        aria-label="icon: right" class="anticon anticon-right"><svg
+                                        viewBox="64 64 896 896" focusable="false" class="" data-icon="right" width="1em"
+                                        height="1em" fill="currentColor" aria-hidden="true"><path
+                                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path></svg></i></span>
+                            </div>
+                            <div class="_3BUZPB">
+                                <div class="_2Bo4Th" role="button" tabindex="-1"><i aria-label="ic-dislike"
+                                                                                    class="anticon">
+                                    <svg width="1em" height="1em" fill="currentColor" aria-hidden="true"
+                                         focusable="false" class="">
+                                        <use xlink:href="#ic-dislike"></use>
+                                    </svg>
+                                </i></div>
+                            </div>
+                        </div>
+                        <div class="_18vaTa"><a class="_3BUZPB _1x1ok9 _1OhGeD" href="/nb/42565036" target="_blank"
+                                                rel="noopener noreferrer"><i aria-label="ic-notebook" class="anticon">
+                            <svg width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"
+                                 class="">
+                                <use xlink:href="#ic-notebook"></use>
+                            </svg>
+                        </i><span>日记本</span></a>
+                            <div class="_3BUZPB ant-dropdown-trigger">
+                                <div class="_2Bo4Th"><i aria-label="ic-others" class="anticon">
+                                    <svg width="1em" height="1em" fill="currentColor" aria-hidden="true"
+                                         focusable="false" class="">
+                                        <use xlink:href="#ic-others"></use>
+                                    </svg>
+                                </i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_19DgIp" style="margin-top:24px;margin-bottom:24px"></div>
+                    <div class="_13lIbp">
+                        <div class="_191KSt">"小礼物走一走，来简书关注我"</div>
+                        <button type="button" class="_1OyPqC _3Mi9q9 _2WY0RL _1YbC5u"><span>赞赏支持</span></button>
+                        <span class="_3zdmIj">还没有人赞赏，支持一下</span></div>
+                    <div class="d0hShY"><a class="_1OhGeD" href="/u/328e2abba0e6" target="_blank"
+                                           rel="noopener noreferrer"><img class="_27NmgV"
+                                                                          src="https://upload.jianshu.io/users/upload_avatars/21183510/c04ba045-a776-432a-9440-81f20241f04a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/100/h/100/format/webp"
+                                                                          alt="  "></a>
+                        <div class="Uz-vZq">
+                            <div class="Cqpr1X"><a class="HC3FFO _1OhGeD" href="/u/328e2abba0e6" title="Dear深情的妍妍"
+                                                   target="_blank" rel="noopener noreferrer">Dear深情的妍妍</a><a
+                                    class="_2edyx1 _3GlyHK _1OhGeD"
+                                    href="https://www.jianshu.com/mobile/campaign/day_by_day/join?utm_medium=badge"
+                                    target="_blank" rel="noopener noreferrer"><img class="_1_2JEL"
+                                                                                   src="https://upload.jianshu.io/user_badge/3c9007f3-89e8-459f-b658-12fddff86fdd"
+                                                                                   alt="  "
+                                                                                   style="width: 16px; height: 16px; min-width: 16px; min-height: 16px;"></a><span
+                                    class="_2WEj6j" title="热巴、高伟光未来可期，人间美好
+勿动枕上书是底线、热巴高伟光是命！
+你们别动，也动不起">热巴、高伟光未来可期，人间美好
+勿动枕上书是底线、热巴高伟光是命！
+你们别动，也动不起</span></div>
+                            <div class="lJvI3S">
+                                <span>总资产111 (约10.25元)</span><span>共写了11.0W字</span><span>获得7,222个赞</span><span>共2,013个粉丝</span>
+                            </div>
+                        </div>
+                        <button data-locale="zh-CN" type="button" class="_1OyPqC _3Mi9q9"><span>关注</span></button>
+                    </div>
+                </section>
+
+            </div>
 
         </div>
 
@@ -18,9 +125,9 @@
     import TopMenu from '@/components/TopMenu.vue'
 
     export default {
-        data(){
-            return{
-                t_note : {
+        data() {
+            return {
+                t_note: {
                     "data": {
                         "is_author": false,
                         "last_updated_at": 1586248910,
@@ -95,6 +202,177 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: calc(100vh - 66px);
+        padding-top: 10px;
+        font-size: 16px;
+        box-sizing: content-box;
+        width: 1000px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        .left-box {
+            flex-shrink: 0;
+            width: 730px;
+            margin-bottom: 24px;
+            margin-right: 10px;
+            box-sizing: border-box;
+            display: block;
+        }
+    }
+    ._1RuRku {
+        font-size: 30px;
+        font-weight: 700;
+        word-break: break-word;
+    }
+    .rEsl9f {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+        font-size: 13px;
+        ._2mYfmT {
+            display: flex;
+            align-items: center;
+        }
+    }
+    ._13D2Eh {
+        display: block;
+        border-radius: 50%;
+        border: 1px solid #eee;
+        min-width: 48px;
+        min-height: 48px;
+        width: 48px;
+        height: 48px;
+        vertical-align: middle;
+    }
+    ._3U4Smb {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        .FxYr8x {
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+        ._2edyx1 {
+            flex-shrink: 0;
+            margin-right: 8px;
+        }
+    }
+    ._3kba3h {
+        padding: 2px 9px;
+    }
+    ._34692- {
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    ._3Mi9q9 {
+         color: #ec7259;
+         background-color: #fff;
+         border-color: #ec7259;
+     }
+    ._1OyPqC {
+        position: relative;
+        flex-shrink: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        white-space: nowrap;
+        user-select: none;
+        border: 1px solid #999;
+    }
+    .s-dsoj {
+        display: flex;
+        color: #969696;
+    }
+    ._3tCVn5 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ec7259;
+        i {
+            margin-right: .3em;
+        }
+    }
+    .s-dsoj>:not(:last-child) {
+        margin-right: 10px;
+    }
+    ._2rhmJa {
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    ._-0zx5e {
+        font-size: 14px;
+        color: #969696;
+        margin: 20px 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    ._1kCBjS {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #969696;
+    }
+    ._3BUZPB:not(:last-child) {
+        margin-right: 12px;
+    }
+    ._2Bo4Th {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        color: #969696;
+        border: 1px solid #eee;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    ._13lIbp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 40px 0 32px;
+        ._191KSt {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        ._3Mi9q9 {
+            color: #fff;
+            background-color: #ec7259;
+            border-color: #ec7259;
+        }
+        ._2WY0RL {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+        ._3VRLsv {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: calc(100vh - 66px);
+            padding-top: 10px;
+            font-size: 16px;
+        }
+
+    }
+
+
 
 </style>

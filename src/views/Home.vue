@@ -116,7 +116,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss"  scoped>
     .split-line {
         margin: -5px 0 15px;
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="topmenu">
     <el-menu style="height:58px;"
-             default-active="choiceIndex"
+             :default-active="choiceIndex"
              class="el-menu-demo"
              mode="horizontal"
              @select="handleSelect">

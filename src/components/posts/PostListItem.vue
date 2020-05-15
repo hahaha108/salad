@@ -3,25 +3,21 @@
     <el-row>
       <el-col :span="17">
         <div>
-          <a href=""
-             class="title">{{postIntro.title}}</a>
-          <!-- <router-link to="/about"
-                       class="title"
-                       style="text-decoration: none;">{{postIntro.title}}</router-link> -->
-          <!-- <span>{{postIntro.title}}</span> -->
+          <router-link to="/postdetail"
+             class="title">{{postIntro.title}}</router-link>
           <p class="abstract">{{postIntro.intro}}</p>
           <div class="meta">
             <span class="jsd-meta">
-              <i class="iconfont ic-paid1"></i> 7.5
+              <i class="iconfont ic-paid1"></i> {{postIntro.jsz}}
             </span>
             <a class="nickname"
                target="_blank"
-               href="/u/0246c2205384">清泉_9313</a>
+               href="/u/0246c2205384">{{postIntro.author.name}}</a>
             <a target="_blank"
                href="/p/558c000a95c9#comments">
-              <i class="iconfont ic-list-comments"></i> 47
-            </a> <span><i class="iconfont ic-list-like"></i> 174</span>
-            <span><i class="iconfont ic-list-money"></i> 1</span>
+              <i class="iconfont ic-list-comments"></i> {{postIntro.commentNum}}
+            </a> <span><i class="iconfont ic-list-like"></i> {{postIntro.likes}}</span>
+            <span><i class="iconfont ic-list-money"></i> {{postIntro.admiration}}</span>
           </div>
         </div>
       </el-col>

@@ -1,6 +1,5 @@
 <template>
     <div class="home">
-
         <!--导航栏-->
         <TopMenu choiceIndex="1"/>
 
@@ -53,6 +52,9 @@
             </el-row>
         </div>
 
+        <!--Backtop 回到顶部-->
+        <el-backtop></el-backtop>
+
     </div>
 </template>
 
@@ -80,7 +82,7 @@
                     views: 624,
                     admiration: 0
                 },
-                t_usersList : [{
+                t_usersList: [{
                     name: "董克平日记",
                     avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
                     url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
@@ -136,6 +138,7 @@
         padding: 30px 0 0;
         position: relative;
     }
+
     .left-box {
         position: relative;
     }

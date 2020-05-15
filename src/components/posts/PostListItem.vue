@@ -12,16 +12,16 @@
           <p class="abstract">{{postIntro.intro}}</p>
           <div class="meta">
             <span class="jsd-meta">
-              <i class="el-icon-edit"></i> 7.5
+              <i class="iconfont ic-paid1"></i> 7.5
             </span>
             <a class="nickname"
                target="_blank"
                href="/u/0246c2205384">清泉_9313</a>
             <a target="_blank"
                href="/p/558c000a95c9#comments">
-              <i class="el-icon-edit"></i> 47
-            </a> <span><i class="el-icon-edit"></i> 174</span>
-            <span><i class="el-icon-edit"></i> 1</span>
+              <i class="iconfont ic-list-comments"></i> 47
+            </a> <span><i class="iconfont ic-list-like"></i> 174</span>
+            <span><i class="iconfont ic-list-money"></i> 1</span>
           </div>
         </div>
       </el-col>
@@ -113,5 +113,8 @@ export default {
 .meta span {
   margin-right: 10px;
   color: #b4b4b4;
+}
+.jsd-meta {
+  color: #ea6f5a!important;
 }
 </style>

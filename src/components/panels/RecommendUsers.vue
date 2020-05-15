@@ -23,6 +23,10 @@
                 </p>
             </li>
         </ul>
+
+        <router-link to="/recommendations/users" target="_blank" class="find-more">
+            查看全部<i class="iconfont ic-link"></i></router-link>
+
     </div>
 </template>
 
@@ -65,6 +69,7 @@
         padding-top: 0;
         font-size: 13px;
         text-align: center;
+        box-sizing: border-box;
         .title {
             text-align: left;
             .page-change {
@@ -117,6 +122,19 @@
                 font-size: 12px;
                 color: #969696;
             }
+        }
+        .find-more {
+            position: absolute;
+            padding: 7px 7px 7px 12px;
+            /*width: 480px;*/
+            left: 0;
+            width: 100%;
+            font-size: 13px;
+            color: #787878;
+            background-color: #f7f7f7;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            cursor: pointer;
         }
 
     }

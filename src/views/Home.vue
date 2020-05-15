@@ -134,6 +134,10 @@
     .right-box {
         margin-left: 4.16667%;
         padding: 30px 0 0;
+        position: relative;
+    }
+    .left-box {
+        position: relative;
     }
 
     .download {

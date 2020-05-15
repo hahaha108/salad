@@ -159,6 +159,7 @@ contentsplit-line {
 }
 
 .left-box {
+  padding-top: 30px;
   position: relative;
 }
 

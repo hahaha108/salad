@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="min-width: 1100px;">
+  <div id="app" style="min-width: 1200px;">
     <!--<div id="nav">-->
     <!--<router-link to="/">Home</router-link> |-->
     <!--<router-link to="/about">About</router-link>-->

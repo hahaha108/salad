@@ -127,7 +127,7 @@ export default {
   //   overflow: hidden;
   //   left: 50%;
   //   transform: translateX(-50%);
-  width: 900px;
+  width: 1000px;
   //   display: inline-block;
   margin: 0 auto;
 }

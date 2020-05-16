@@ -122,9 +122,6 @@ export default {
 }
 </script>
 <style lang="scss"  scoped>
-.row {
-  min-width: 1100px;
-}
 .content {
   //   position: absolute;
   //   overflow: hidden;

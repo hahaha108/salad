@@ -92,15 +92,9 @@ export default {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
-  color: #000;
+  color: #333;
   &:visited {
     color: #969696;
-  }
-  &:hover {
-    color: blue;
-  }
-  &:link {
-    color: yellow;
   }
   &:active {
     color: pink;

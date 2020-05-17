@@ -15,7 +15,7 @@
     <div class="cardtail">
       <div v-for="(mini_post,i) in postCardItem.mini_post_list" :key="i" class="minipost">
         <div class="miniposttitle">
-          <router-link :to="mini_post.post_url">{{mini_post.title}}</router-link>
+          <router-link :to="mini_post.post_url" target="_blank">{{mini_post.title}}</router-link>
         </div>
         <div class="minipostview">
           <span>阅读 {{mini_post.view_count}}</span>

@@ -71,6 +71,7 @@ export default {
   }
   .usercount {
     margin-top: 4px;
+    color: #969696;
   }
   .usercount > span {
     margin-left: 10px;
@@ -94,7 +95,7 @@ export default {
   .postlikes {
     display: inline-block;
     margin-top: 12px;
-    >span {
+    > span {
       margin-left: 12px;
       font-size: 15px;
     }

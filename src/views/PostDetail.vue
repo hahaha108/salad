@@ -35,7 +35,9 @@
             </div>
           </el-col>
           <el-col :span="8">
-            <div class="rigth-box"></div>
+            <div class="rigth-box">
+              <UserPostCardItem :postCardItem="t_note"></UserPostCardItem>
+            </div>
           </el-col>
         </el-row>
       </div>
@@ -49,6 +51,7 @@
 <script>
 import TopMenu from "@/components/TopMenu.vue";
 import PostPageItem from "@/components/posts/PostPageItem.vue";
+import UserPostCardItem from "@/components/posts/UserPostCardItem.vue";
 
 export default {
   data() {
@@ -117,7 +120,24 @@ export default {
           "高甜文！慎入！话不多说，开始了！ 帝君抱起凤九，一个仙遁就回到了小竹楼，帝君把凤九轻轻放在床上，卸去了自己的衣服用低沉的声音说“小白，就让你给滚滚再生个弟弟妹妹吧，这样或许我...",
         first_shared_at: 1585269423,
         views_count: 9598,
-        notebook_id: 42565036
+        notebook_id: 42565036,
+        mini_post_list: [
+          {
+            title: "疫情，让我认识到了老婆原来是个农村人",
+            post_url: "/postdetail",
+            view_count: 66296
+          },
+          {
+            title: "冒险的行为",
+            post_url: "/postdetail",
+            view_count: 10
+          },
+          {
+            title: "好心的人们，只是一句话",
+            post_url: "/postdetail",
+            view_count: 39
+          }
+        ]
       }
     };
   },
@@ -135,7 +155,8 @@ export default {
   name: "PostDetail",
   components: {
     TopMenu,
-    PostPageItem
+    PostPageItem,
+    UserPostCardItem
   }
 };
 </script>
@@ -156,6 +177,7 @@ export default {
   top: 216px;
   font-size: 14px;
   text-align: center;
+  color: #969696;
   .zans {
     margin-top: 10px;
   }

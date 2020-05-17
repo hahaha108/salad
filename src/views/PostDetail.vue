@@ -1,8 +1,9 @@
 <template>
   <div class="postdetail">
     <!--导航栏-->
-    <TopMenu />
-
+    <div class="topme">
+      <TopMenu />
+    </div>
     <!-- 左边栏 -->
     <div :class="{leftcade:true,'leftcade-unfixed':flag,'leftcade-fixed':!flag}">
       <div class="likes">
@@ -25,17 +26,19 @@
       </div>
     </div>
 
-    <div class="row">
-      <el-row>
-        <el-col :span="16">
-          <div class="left-box">
-            <PostPageItem :postItem="t_note"></PostPageItem>
-          </div>
-        </el-col>
-        <el-col :span="8">
-          <div class="rigth-box"></div>
-        </el-col>
-      </el-row>
+    <div class="deatilpage">
+      <div class="row">
+        <el-row>
+          <el-col :span="16">
+            <div class="left-box">
+              <PostPageItem :postItem="t_note"></PostPageItem>
+            </div>
+          </el-col>
+          <el-col :span="8">
+            <div class="rigth-box"></div>
+          </el-col>
+        </el-row>
+      </div>
     </div>
 
     <!--Backtop 回到顶部-->
@@ -138,6 +141,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topme {
+  position: fixed;
+  min-width: 1200px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
 .postdetail {
   background-color: #f9f9f9;
 }
@@ -145,8 +155,8 @@ export default {
   position: fixed;
   top: 216px;
   font-size: 14px;
-  text-align:center;
-  .zans{
+  text-align: center;
+  .zans {
     margin-top: 10px;
   }
 }
@@ -160,5 +170,8 @@ export default {
   min-width: 1000px;
   max-width: 1000px;
   margin: 0 auto;
+}
+.deatilpage {
+  margin-top: 59px;
 }
 </style>

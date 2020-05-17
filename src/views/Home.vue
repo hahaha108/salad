@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <!--导航栏-->
+        <div class="topme">
+    
     <TopMenu choiceIndex="1" />
+    </div>
 
     <div class="row">
 
@@ -197,5 +200,15 @@ contentsplit-line {
   margin-top: -4px;
   padding-bottom: 4px;
   min-height: 228px;
+}
+.row{
+    margin-top: 59px;
+}
+.topme {
+  position: fixed;
+  min-width: 1200px;
+  width: 100%;
+  z-index: 1;
+  top: 0;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
   <div class="home">
     <!--导航栏-->
-        <div class="topme">
-    
-    <TopMenu choiceIndex="1" />
+    <div class="topme">
+      <TopMenu choiceIndex="1" />
     </div>
 
     <div class="row">
@@ -117,6 +116,14 @@ export default {
     }
   },
   name: 'Home',
+  created () {
+    // {"id":6,"username":"13","nickname":null,"avatar":"http://192.168.1.103:9527/media/image/default.png","email":null}
+    if (localStorage.getItem('info') && JSON.parse(localStorage.getItem('info'))) {
+      let infoObj = JSON.parse(localStorage.getItem('info'))
+      this.isLogin = true
+      this.imgSrc = infoObj.avatar
+    }
+  },
   components: {
     TopMenu,
     PostListItem,
@@ -201,8 +208,8 @@ contentsplit-line {
   padding-bottom: 4px;
   min-height: 228px;
 }
-.row{
-    margin-top: 59px;
+.row {
+  margin-top: 59px;
 }
 .topme {
   position: fixed;

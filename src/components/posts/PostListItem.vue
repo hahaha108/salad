@@ -3,12 +3,14 @@
     <el-row>
       <el-col :span="17">
         <div>
-          <router-link to="/postdetail"
-             class="title">{{postIntro.public_title}}</router-link>
+          <span class="title"
+                @click="toDetailPage(postIntro.id)"> {{postIntro.public_title}}</span>
+          <!-- <router-link to="id"
+                       class="title"></router-link> -->
           <p class="abstract">{{postIntro.description}}</p>
           <div class="meta">
             <!--<span class="jsd-meta">-->
-              <!--<i class="iconfont ic-paid1"></i> {{postIntro.jsz}}-->
+            <!--<i class="iconfont ic-paid1"></i> {{postIntro.jsz}}-->
             <!--</span>-->
             <a class="nickname"
                target="_blank"
@@ -25,7 +27,8 @@
       <el-col :span="6"
               :offset="1">
         <div>
-          <el-image style="width: 150px; height: 100px"
+          <el-image v-if="postIntro.title_image"
+                    style="width: 150px; height: 100px"
                     :src="postIntro.title_image"
                     fit="fit"></el-image>
         </div>
@@ -42,21 +45,26 @@ export default {
       type: Object,
       default: function () {
         return {
-            public_title: "",
-            description: "",
+          public_title: "",
+          description: "",
           // url: "",
-            title_image: "",
+          title_image: "",
           // jsz: 0,// 简书赞
-            user: {
-                username: "",
+          user: {
+            username: "",
             // url: ""
           },
           comment_count: 0,
-            views_count: 0,
-            likes_count: 0,
-            admiration_count: 0
+          views_count: 0,
+          likes_count: 0,
+          admiration_count: 0
         }
       }
+    }
+  },
+  methods: {
+    toDetailPage (id) {
+      this.$router.push({ path: `/postdetail/${id}` })
     }
   }
 }
@@ -74,6 +82,7 @@ export default {
   }
 }
 .abstract {
+  min-height: 54px;
   text-align: left;
   margin: 0 0 8px;
   font-size: 13px;
@@ -88,6 +97,7 @@ export default {
   }
 }
 .title {
+  cursor: pointer;
   margin: -7px 0 4px;
   display: inherit;
   font-size: 18px;
@@ -106,6 +116,6 @@ export default {
   color: #b4b4b4;
 }
 .jsd-meta {
-  color: #ea6f5a!important;
+  color: #ea6f5a !important;
 }
 </style>

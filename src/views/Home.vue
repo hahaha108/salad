@@ -15,8 +15,9 @@
               <div class="split-line"></div>
               <div v-for="t_post in post_list"
                    class="have-img"
-                   :key="t_post">
-                <PostListItem :postIntro="t_post"></PostListItem>
+                   :key="t_post.id">
+                <PostListItem :postIntro="t_post"
+                              :key="t_post.id"></PostListItem>
                 <!-- <el-divider></el-divider> -->
               </div>
             </div>
@@ -75,7 +76,7 @@ import * as api from '../api'
 export default {
   data () {
     return {
-        post_list:[],
+      post_list: [],
       t_usersList: [{
         name: "董克平日记",
         avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
@@ -111,11 +112,11 @@ export default {
       this.imgSrc = infoObj.avatar
     }
   },
-    mounted() {
-        api.postList({}).then((res) => {
-            this.post_list = res.data;
-        })
-    },
+  mounted () {
+    api.postList({}).then((res) => {
+      this.post_list = res.data;
+    })
+  },
   components: {
     TopMenu,
     PostListItem,

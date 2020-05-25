@@ -54,7 +54,7 @@ import PostPageItem from "@/components/posts/PostPageItem.vue";
 import UserPostCardItem from "@/components/posts/UserPostCardItem.vue";
 
 export default {
-  data() {
+  data () {
     return {
       flag: true,
       t_note: {
@@ -141,7 +141,8 @@ export default {
       }
     };
   },
-  mounted() {
+  mounted () {
+    // console.log(this.$route)
     // 动态判断左边框left值
     window.addEventListener("resize", () => {
       console.log("window.innerWidth:", window.innerWidth);

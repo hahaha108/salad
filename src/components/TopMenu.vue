@@ -66,8 +66,11 @@
           </el-button>
           <!-- </el-col>
                     <el-col :span="1">-->
-          <el-button type="danger"><router-link to="/publish"
-                                                target="_blank" style="cursor: pointer;color: #FFFFFF;text-decoration: none;">写文章</router-link></el-button>
+          <el-button type="danger">
+            <router-link to="/publish"
+                         target="_blank"
+                         style="cursor: pointer;color: #FFFFFF;text-decoration: none;">写文章</router-link>
+          </el-button>
           <!-- </el-col> -->
         </el-col>
       </el-row>
@@ -89,10 +92,8 @@ export default {
     choiceIndex: String
   },
   created () {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token') && localStorage.getItem('info')) {
       this.isLogin = true
-    }
-    if (localStorage.getItem('info')) {
       this.info = JSON.parse(localStorage.getItem('info'))
     }
   },

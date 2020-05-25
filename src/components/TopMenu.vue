@@ -66,7 +66,8 @@
           </el-button>
           <!-- </el-col>
                     <el-col :span="1">-->
-          <el-button type="danger">写文章</el-button>
+          <el-button type="danger"><router-link to="/publish"
+                                                target="_blank" style="cursor: pointer;color: #FFFFFF;text-decoration: none;">写文章</router-link></el-button>
           <!-- </el-col> -->
         </el-col>
       </el-row>

@@ -114,7 +114,7 @@ export default {
     getInfoAction () {
       api.getInfo({})
         .then((res) => {
-          localStorage.setItem('info', JSON.stringify(res))
+          localStorage.setItem('info', JSON.stringify(res.data))
           setTimeout(() => {
             this.$router.push('/')
           }, 200)
@@ -141,8 +141,8 @@ export default {
             password: this.loginFormInfo.password
           })
             .then((res) => {
-              localStorage.setItem('token', res.token)
-              if (res.message === 'ok') {
+              localStorage.setItem('token', res.data.token)
+              if (res.code === 200) {
                 Message.success('登陆成功！')
                 this.getInfoAction()
               }
@@ -166,7 +166,7 @@ export default {
               password: this.registerFormInfo.password
             })
               .then((res) => {
-                if (res.username) {
+                if (res.code == 200) {
                   Message.success({
                     message: '注册成功！请登录...',
                     duration: 700

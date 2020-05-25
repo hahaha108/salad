@@ -4,20 +4,21 @@
       <el-col :span="17">
         <div>
           <router-link to="/postdetail"
-             class="title">{{postIntro.title}}</router-link>
-          <p class="abstract">{{postIntro.intro}}</p>
+             class="title">{{postIntro.public_title}}</router-link>
+          <p class="abstract">{{postIntro.description}}</p>
           <div class="meta">
-            <span class="jsd-meta">
-              <i class="iconfont ic-paid1"></i> {{postIntro.jsz}}
-            </span>
+            <!--<span class="jsd-meta">-->
+              <!--<i class="iconfont ic-paid1"></i> {{postIntro.jsz}}-->
+            <!--</span>-->
             <a class="nickname"
                target="_blank"
-               href="/u/0246c2205384">{{postIntro.author.name}}</a>
+               href="/u/0246c2205384">{{postIntro.user.username}}</a>
             <a target="_blank"
                href="/p/558c000a95c9#comments">
-              <i class="iconfont ic-list-comments"></i> {{postIntro.commentNum}}
-            </a> <span><i class="iconfont ic-list-like"></i> {{postIntro.likes}}</span>
-            <span><i class="iconfont ic-list-money"></i> {{postIntro.admiration}}</span>
+              <i class="iconfont ic-list-comments"></i> {{postIntro.comment_count}}
+            </a>
+            <span><i class="iconfont ic-list-like"></i> {{postIntro.likes_count}}</span>
+            <span><i class="iconfont ic-list-money"></i> {{postIntro.admiration_count}}</span>
           </div>
         </div>
       </el-col>
@@ -25,7 +26,7 @@
               :offset="1">
         <div>
           <el-image style="width: 150px; height: 100px"
-                    :src="postIntro.titleImageUrl"
+                    :src="postIntro.title_image"
                     fit="fit"></el-image>
         </div>
       </el-col>
@@ -41,19 +42,19 @@ export default {
       type: Object,
       default: function () {
         return {
-          title: "",
-          intro: "",
-          url: "",
-          titleImageUrl: "",
-          jsz: 0,// 简书赞
-          author: {
-            name: "",
-            url: ""
+            public_title: "",
+            description: "",
+          // url: "",
+            title_image: "",
+          // jsz: 0,// 简书赞
+            user: {
+                username: "",
+            // url: ""
           },
-          commentNum: 0,
-          likes: 0,
-          views: 0,
-          admiration: 0
+          comment_count: 0,
+            views_count: 0,
+            likes_count: 0,
+            admiration_count: 0
         }
       }
     }

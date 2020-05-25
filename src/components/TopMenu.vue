@@ -41,16 +41,16 @@
         <el-col :span="7"
                 style="float: right;margin-top: 11px;">
           <!-- <el-col :span="1"> -->
-          <el-avatar v-if="isLogin"
+          <el-avatar v-if="getIsLogin"
                      size="small"
-                     :src="info.avatar"></el-avatar>
-          <el-button v-if="isLogin"
+                     :src="info&&info.avatar||''"></el-avatar>
+          <el-button v-if="getIsLogin"
                      type="text"
                      style="color:#303133;font-weight:400;"
                      @click='logoutConfirm'>
             退出
           </el-button>
-          <el-button v-if="!isLogin"
+          <el-button v-if="!getIsLogin"
                      type="text"
                      style="color:#303133;font-weight:400;">
             <router-link :to="{path:'login_register/', query:{default_index:1}}"
@@ -58,7 +58,7 @@
           </el-button>
           <!-- </el-col> -->
           <!-- <el-col :span="1"> -->
-          <el-button v-if="!isLogin"
+          <el-button v-if="!getIsLogin"
                      type="text"
                      style="color:#303133;font-weight:400;">
             <router-link :to="{path:'login_register/', query:{default_index:2}}"
@@ -79,10 +79,11 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+import { Message } from 'element-ui';
 export default {
   data () {
     return {
-      isLogin: false,
       info: null,
       state: ""
     };
@@ -93,13 +94,20 @@ export default {
   },
   created () {
     if (localStorage.getItem('token') && localStorage.getItem('info')) {
-      this.isLogin = true
       this.info = JSON.parse(localStorage.getItem('info'))
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getIsLogin'
+    ])
   },
   mounted () {
   },
   methods: {
+    ...mapMutations({
+      set_isLogn: 'SET_ISLOGIN'
+    }),
     logoutConfirm () {
       this.$confirm('确定要退出吗?', '提示', {
         confirmButtonText: '确定',
@@ -107,12 +115,13 @@ export default {
         type: 'warning'
       }).then(() => {
         this.logoutAction()
-      }).catch(() => { });
+      }).catch((err) => { err.message && Message.error(err.message) });
     },
     logoutAction () {
       localStorage.removeItem('token')
       localStorage.removeItem('info')
-      this.isLogin = false
+      localStorage.removeItem('isLogin')
+      this.set_isLogn(false)
     },
     querySearchAsync () {
     },

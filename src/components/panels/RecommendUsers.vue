@@ -14,7 +14,7 @@
         <a :href="user.url"
            target="_blank"
            class="avatar">
-          <img :src="user.avatar">
+          <img :src="user&&user.avatar||''">
         </a>
         <a class="follow"
            state="0"><i class="iconfont ic-follow"></i>关注

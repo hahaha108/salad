@@ -1,11 +1,16 @@
 <template>
   <div class="userpostcard">
     <div class="cardtop">
-      <el-avatar :size="50" :src="postCardItem.user.avatar"></el-avatar>
+      <el-avatar :size="50"
+                 :src="postCardItem.user&&postCardItem.user.avatar||''"></el-avatar>
       <div class="postuser">
         <div class="nickname">
-          <a href style="font-size:15px;color:#333">{{postCardItem.user.nickname}}</a>
-          <el-button type="danger" size="mini" class="followbtn" round>关注</el-button>
+          <a href
+             style="font-size:15px;color:#333">{{postCardItem.user.nickname}}</a>
+          <el-button type="danger"
+                     size="mini"
+                     class="followbtn"
+                     round>关注</el-button>
         </div>
         <div class="usercount">
           <span>总资产{{postCardItem.wordage}}</span>
@@ -13,9 +18,12 @@
       </div>
     </div>
     <div class="cardtail">
-      <div v-for="(mini_post,i) in postCardItem.mini_post_list" :key="i" class="minipost">
+      <div v-for="(mini_post,i) in postCardItem.mini_post_list"
+           :key="i"
+           class="minipost">
         <div class="miniposttitle">
-          <router-link :to="mini_post.post_url" target="_blank">{{mini_post.title}}</router-link>
+          <router-link :to="mini_post.post_url"
+                       target="_blank">{{mini_post.title}}</router-link>
         </div>
         <div class="minipostview">
           <span>阅读 {{mini_post.view_count}}</span>

@@ -2,14 +2,20 @@
   <div class="postpage">
     <h1 class="posttitle">{{postItem.public_title}}</h1>
     <div class="postuserinfo">
-      <el-avatar :size="50" :src="postItem.user.avatar"></el-avatar>
+      <el-avatar :size="50"
+                 :src="postItem.user&&postItem.user.avatar||''"></el-avatar>
       <div class="postuser">
         <div class="nickname">
-          <a href style="font-size:15px;color:#333">{{postItem.user.nickname}}</a>
-          <el-button type="danger" size="mini" class="followbtn" round>关注</el-button>
+          <a href
+             style="font-size:15px;color:#333">{{postItem.user.nickname}}</a>
+          <el-button type="danger"
+                     size="mini"
+                     class="followbtn"
+                     round>关注</el-button>
         </div>
         <div class="usercount">
-          <i class="iconfont ic-paid1" style="color:#ec7259">
+          <i class="iconfont ic-paid1"
+             style="color:#ec7259">
             <span>{{postItem.user.gender}}</span>
           </i>
           <span>2020.03.18 08:44:14</span>
@@ -20,7 +26,8 @@
     </div>
 
     <!-- 正文 -->
-    <div class="zhenwen" v-html="postItem.free_content"></div>
+    <div class="zhenwen"
+         v-html="postItem.free_content"></div>
 
     <!-- 底部组件栏 -->
     <div class="posttail">
@@ -41,7 +48,7 @@
 <script>
 export default {
   name: "PostPageItem",
-  data() {
+  data () {
     return {};
   },
   props: {

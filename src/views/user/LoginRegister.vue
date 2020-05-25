@@ -72,15 +72,16 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import { Message } from 'element-ui'
 import * as api from '../../api'
 export default {
   name: "Login",
   data () {
     return {
-      pwdType1: '',
-      pwdType2: '',
-      pwdType3: '',
+      pwdType1: 'password',
+      pwdType2: 'password',
+      pwdType3: 'password',
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
@@ -108,6 +109,9 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({
+      set_isLogn: 'SET_ISLOGIN'
+    }),
     showPwd (v) {
       this['pwdType' + v] === 'password' ? this['pwdType' + v] = '' : this['pwdType' + v] = 'password';
     },
@@ -115,13 +119,12 @@ export default {
       api.getInfo({})
         .then((res) => {
           localStorage.setItem('info', JSON.stringify(res.data))
+          localStorage.setItem('isLogin', 1)
+          this.set_isLogn(true)
           setTimeout(() => {
             this.$router.push('/')
           }, 200)
-        })
-        .catch(() => {
-          Message.error('失败！')
-        })
+        }).catch((err) => { err.message && Message.error(err.message) })
     },
     handleSelect (key) {
       if (key == 2) {
@@ -146,10 +149,7 @@ export default {
                 Message.success('登陆成功！')
                 this.getInfoAction()
               }
-            })
-            .catch(() => {
-              Message.error('用户名或密码错误')
-            })
+            }).catch((err) => { err.message && Message.error(err.message) });
         } else {
           return false;
         }
@@ -171,13 +171,10 @@ export default {
                     message: '注册成功！请登录...',
                     duration: 700
                   })
-                  this.loginFormInfo.username = res.username
+                  this.loginFormInfo.username = res.data.username
                   this.activeIndex = '1'
                 }
-              })
-              .catch(() => {
-                Message.error('注册失败！')
-              })
+              }).catch((err) => { err.message && Message.error(err.message) });
           }
         } else {
           return false;

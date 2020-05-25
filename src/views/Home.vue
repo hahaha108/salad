@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import { Message } from 'element-ui';
 // @ is an alias to /src
 import TopMenu from '@/components/TopMenu.vue'
 import PostListItem from '@/components/posts/PostListItem.vue'
@@ -108,14 +109,15 @@ export default {
     // {"id":6,"username":"13","nickname":null,"avatar":"http://192.168.1.103:9527/media/image/default.png","email":null}
     if (localStorage.getItem('info') && JSON.parse(localStorage.getItem('info'))) {
       let infoObj = JSON.parse(localStorage.getItem('info'))
-      this.isLogin = true
-      this.imgSrc = infoObj.avatar
+      // this.isLogin = true
+      this.imgSrc = infoObj && infoObj.avatar || ''
     }
   },
   mounted () {
     api.postList({}).then((res) => {
       this.post_list = res.data;
-    })
+    }).catch((err) => { err.message && Message.error(err.message) });
+
   },
   components: {
     TopMenu,

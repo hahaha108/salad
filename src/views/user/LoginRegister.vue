@@ -59,6 +59,14 @@
                    class="el-input__icon el-icon-view"
                    @click="showPwd(3)"></i></el-input>
             </el-form-item>
+            <el-form-item prop="captcha_code">
+              <div class="captcha">
+              <el-input placeholder="验证码"
+                        v-model="registerFormInfo.captcha_code"></el-input>
+                <el-image :src="captchaImageSrc">
+                </el-image>
+              </div>
+            </el-form-item>
             <div class="subBtn">
               <el-button type="danger"
                          @click="onRegisterSubmit">注册</el-button>
@@ -104,9 +112,20 @@ export default {
       registerFormInfo: {
         username: '',
         password: '',
-        re_password: ''
-      }
+        re_password: '',
+        captcha_code: '',
+        captcha_id: ''
+      },
+        captchaImageSrc:''
     }
+  },
+    mounted () {
+            api.captchaImage({}).then(
+                (res) => {
+                    this.captchaImageSrc = "data:" + res.data.type + ";" + res.data.encoding + "," + res.data.image_base;
+                    this.registerFormInfo.captcha_id = res.data.id
+                }
+            )
   },
   methods: {
     ...mapMutations({
@@ -163,7 +182,9 @@ export default {
           } else {
             api.register({
               username: this.registerFormInfo.username,
-              password: this.registerFormInfo.password
+              password: this.registerFormInfo.password,
+              captcha_code: this.registerFormInfo.captcha_code,
+              captcha_id: this.registerFormInfo.captcha_id
             })
               .then((res) => {
                 if (res.code == 200) {
@@ -214,4 +235,11 @@ export default {
     }
   }
 }
+  .captcha{
+    img{
+      display: inline-block;
+      width: 80px;
+      height: auto;
+    }
+  }
 </style>

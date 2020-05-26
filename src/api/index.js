@@ -4,6 +4,7 @@ let registerUtl = '/users/auth/users/'
 let infoUrl = '/users/auth/info/'
 let postPublishUrl = '/posts/v1/posts/'
 let postListUrl = '/posts/v1/posts/'
+let captchaImageUrl = '/users/captcha/image'
 //  let url = '/posts/v1/posts/'
 //登录
 export function login(data) {
@@ -24,4 +25,8 @@ export function postPublish(data) {
 //文章列表
 export function postList(data) {
     return http('get', postListUrl, data)
+}
+//获取验证码图片
+export function captchaImage(data) {
+    return http('get', captchaImageUrl, data)
 }

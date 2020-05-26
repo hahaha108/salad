@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '../store'
 // axios.interceptors
-let host = 'http://192.168.1.103:9527'
+let host = 'http://127.0.0.1:9527'
 const http = (method, url, options = {}) => {
   let token = localStorage.getItem('token')
   return new Promise((resolve, reject) => {

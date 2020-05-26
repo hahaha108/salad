@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '../store'
 // axios.interceptors
-let host = 'http://127.0.0.1:9527'
+let host = 'http://192.168.1.103:9527'
 const http = (method, url, options = {}) => {
   let token = localStorage.getItem('token')
   return new Promise((resolve, reject) => {
@@ -45,12 +45,17 @@ const http = (method, url, options = {}) => {
       }
     )
     //这里可以在调用的时候看到你的method、url、data、headers等参数
-    axios({
+    let obj = {
       method: method,
       url: host + url,
-      data: options,
       headers: newOptions.headers
-    })
+    }
+    if (method === 'get') {
+      obj.params = options
+    } else {
+      obj.data = options
+    }
+    axios(obj)
       .then(res => {
         //根据返回的状态码判断，注意res返回的并不一定都是status，比如小程序就是statusCode
         if (res && res.status >= 200 && res.status < 300) {

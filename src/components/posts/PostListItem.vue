@@ -1,7 +1,7 @@
 <template>
   <div class="postlistitem">
     <el-row>
-      <el-col :span="17">
+      <el-col :span="postIntro.title_image?17:24">
         <div>
           <span class="title"
                 @click="toDetailPage(postIntro.id)"> {{postIntro.public_title}}</span>

@@ -13,12 +13,27 @@
           <el-col :span="15">
             <div class="left-box">
               <div class="split-line"></div>
-              <div v-for="t_post in post_list"
-                   class="have-img"
-                   :key="t_post.id">
-                <PostListItem :postIntro="t_post"
-                              :key="t_post.id"></PostListItem>
-                <!-- <el-divider></el-divider> -->
+              <template v-if="post_list&&post_list.length">
+                <div v-for="(t_post,index) in post_list"
+                     class="have-img"
+                     :key="index.id">
+                  <PostListItem :postIntro="t_post"></PostListItem>
+                  <!-- <el-divider></el-divider> -->
+                </div>
+              </template>
+              <template v-if=" !post_list||!post_list.length">
+                <div style="font-size:  16px; color:   #afa7a7;">
+                  暂无数据
+                </div>
+              </template>
+              <div v-if="loadMore"
+                   @click="handleList"
+                   style="text-align: center;cursor:pointer;margin-bottom: 18px;">
+                点击加载更多
+              </div>
+              <div v-if="!loadMore&&post_list.length"
+                   style="text-align: center;margin-bottom: 18px;">
+                暂无更多数据
               </div>
             </div>
           </el-col>
@@ -77,31 +92,35 @@ import * as api from '../api'
 export default {
   data () {
     return {
+      page_size: 5,
+      page: 1,
+      loadMore: false,
       post_list: [],
-      t_usersList: [{
-        name: "董克平日记",
-        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
-        intro: "写了958k字 · 3.7k喜欢",
-      },
-      {
-        name: "董克平日记",
-        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
-        intro: "写了958k字 · 3.7k喜欢",
-      },
-      {
-        name: "董克平日记",
-        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
-        intro: "写了958k字 · 3.7k喜欢",
-      },
-      {
-        name: "董克平日记",
-        avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
-        url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
-        intro: "写了958k字 · 3.7k喜欢",
-      },]
+      t_usersList: []
+      //  [{
+      //   name: "董克平日记",
+      //   avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      //   url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+      //   intro: "写了958k字 · 3.7k喜欢",
+      // },
+      // {
+      //   name: "董克平日记",
+      //   avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      //   url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+      //   intro: "写了958k字 · 3.7k喜欢",
+      // },
+      // {
+      //   name: "董克平日记",
+      //   avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      //   url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+      //   intro: "写了958k字 · 3.7k喜欢",
+      // },
+      // {
+      //   name: "董克平日记",
+      //   avatar: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      //   url: "https://www.jianshu.com/u/51b4ef597b53?utm_source=desktop&utm_medium=index-users",
+      //   intro: "写了958k字 · 3.7k喜欢",
+      // },]
     }
   },
   name: 'Home',
@@ -114,10 +133,29 @@ export default {
     }
   },
   mounted () {
-    api.postList({}).then((res) => {
+    // this.page = 1
+    api.postList({ page_size: this.page_size, page: this.page }).then((res) => {
       this.post_list = res.data;
+      if (res.count > this.post_list.length) {
+        this.loadMore = true
+      } else {
+        this.loadMore = false
+      }
     }).catch((err) => { err.message && Message.error(err.message) });
 
+  },
+  methods: {
+    handleList () {
+      this.page += 1
+      api.postList({ page_size: this.page_size, page: this.page }).then((res) => {
+        this.post_list = this.post_list.concat(res.data)
+        if (res.count > this.post_list.length) {
+          this.loadMore = true
+        } else {
+          this.loadMore = false
+        }
+      }).catch((err) => { err.message && Message.error(err.message) });
+    }
   },
   components: {
     TopMenu,

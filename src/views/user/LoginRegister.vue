@@ -61,9 +61,10 @@
             </el-form-item>
             <el-form-item prop="captcha_code">
               <div class="captcha">
-              <el-input placeholder="验证码"
-                        v-model="registerFormInfo.captcha_code"></el-input>
-                <el-image :src="captchaImageSrc">
+                <el-input placeholder="验证码"
+                          v-model="registerFormInfo.captcha_code"></el-input>
+                <el-image @click="getImg"
+                          :src="captchaImageSrc">
                 </el-image>
               </div>
             </el-form-item>
@@ -93,16 +94,19 @@ export default {
       rules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
         ],
         re_password: [
           { required: true, message: '请再次输入密码', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-        ]
+          { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' }
+        ],
+        captcha_code: [
+          { required: true, message: '请输入验证码', trigger: 'blur' }
+        ],
       },
       activeIndex: this.$route.query.default_index ? this.$route.query.default_index : "1",
       loginFormInfo: {
@@ -116,18 +120,21 @@ export default {
         captcha_code: '',
         captcha_id: ''
       },
-        captchaImageSrc:''
+      captchaImageSrc: ''
     }
   },
-    mounted () {
-            api.captchaImage({}).then(
-                (res) => {
-                    this.captchaImageSrc = "data:" + res.data.type + ";" + res.data.encoding + "," + res.data.image_base;
-                    this.registerFormInfo.captcha_id = res.data.id
-                }
-            )
+  mounted () {
+    this.getImg()
   },
   methods: {
+    getImg () {
+      api.captchaImage({}).then(
+        (res) => {
+          this.captchaImageSrc = "data:" + res.data.type + ";" + res.data.encoding + "," + res.data.image_base;
+          this.registerFormInfo.captcha_id = res.data.id
+        }
+      )
+    },
     ...mapMutations({
       set_isLogn: 'SET_ISLOGIN'
     }),
@@ -194,8 +201,12 @@ export default {
                   })
                   this.loginFormInfo.username = res.data.username
                   this.activeIndex = '1'
+                } else {
+                  Message.error(res.message)
                 }
-              }).catch((err) => { err.message && Message.error(err.message) });
+              }).catch((err) => {
+                err.message && Message.error(err.message)
+              });
           }
         } else {
           return false;
@@ -206,6 +217,27 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.captcha {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  .el-input {
+    width: calc(100% - 89px);
+    ::v-deep .el-input__inner {
+      width: 100% !important;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right: 0;
+    }
+  }
+  ::v-deep .el-image {
+    width: 93px;
+    height: 38px;
+    border: 1px solid #dcdfe6;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+}
 .loginContainer {
   background-color: #f1f1f1;
   height: 100%;
@@ -235,11 +267,11 @@ export default {
     }
   }
 }
-  .captcha{
-    img{
-      display: inline-block;
-      width: 80px;
-      height: auto;
-    }
+.captcha {
+  img {
+    display: inline-block;
+    width: 80px;
+    height: auto;
   }
+}
 </style>

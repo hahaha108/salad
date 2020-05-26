@@ -66,10 +66,13 @@
           </el-button>
           <!-- </el-col>
                     <el-col :span="1">-->
-          <el-button type="danger">
-            <router-link to="/publish"
+          <el-button type="danger"
+                     @click="handleWrite">
+            <!-- <router-link to="/publish"
                          target="_blank"
-                         style="cursor: pointer;color: #FFFFFF;text-decoration: none;">写文章</router-link>
+                         style="cursor: pointer;color: #FFFFFF;text-decoration: none;"> -->
+            写文章
+            <!-- </router-link> -->
           </el-button>
           <!-- </el-col> -->
         </el-col>
@@ -105,6 +108,14 @@ export default {
   mounted () {
   },
   methods: {
+    handleWrite () {
+      if (this.getIsLogin) {
+        this.$router.push('/publish')
+      } else {
+        Message.error('请先登录！')
+        this.$router.push('/login_register/?default_index=1')
+      }
+    },
     ...mapMutations({
       set_isLogn: 'SET_ISLOGIN'
     }),

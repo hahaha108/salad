@@ -14,11 +14,14 @@
                      round>关注</el-button>
         </div>
         <div class="usercount">
-          <i class="iconfont ic-paid1"
+          <!-- <i class="iconfont ic-paid1"
              style="color:#ec7259">
             <span>{{postItem.user.gender}}</span>
-          </i>
-          <span>2020.03.18 08:44:14</span>
+          </i> -->
+          <span>
+            {{moment(postItem.last_updated_at).format('YYYY-MM-DD HH:mm:ss')}}
+            <!-- 2020.03.18 08:44:14 -->
+          </span>
           <span>字数 {{postItem.wordage}}</span>
           <span>阅读 {{postItem.views_count}}</span>
         </div>
@@ -46,10 +49,14 @@
   </div>
 </template>
 <script>
+import moment from 'moment'
 export default {
   name: "PostPageItem",
   data () {
     return {};
+  },
+  methods: {
+    moment
   },
   props: {
     postItem: {

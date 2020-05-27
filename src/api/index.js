@@ -35,3 +35,11 @@ export function getDetailContent(data) {
 export function captchaImage(data) {
   return http('get', captchaImageUrl, data)
 }
+//获取验证码图片
+export function handleSubmit(data, id) {
+  return http('put', `/users/auth/users/${id}/`, data)
+}
+//上传图片
+export function putImg(data) {
+  return http('post', `/users/auth/avatar/`, data)
+}

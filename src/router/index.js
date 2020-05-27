@@ -36,11 +36,28 @@ const routes = [
     name: 'PostPublish',
     component: () => import('../views/posts/PostPublish.vue')
   },
-    {
-        path: '/user/settings/:id',
-        name: 'UserSettings',
-        component: () => import('../views/user/Settings.vue')
-    },
+  {
+    path: '/user/settings',
+    name: 'UserSettings',
+    component: () => import('../views/user/Settings.vue'),
+    children: [
+      {
+        path: '/user/settings',
+        name: 'BasicSetting',
+        component: () => import('../views/BasicSetting.vue')
+      },
+      {
+        path: '/user/settings/personalInformation',
+        name: 'PersonalInformation',
+        component: () => import('../views/PersonalInformation.vue')
+      },
+      {
+        path: '/user/settings/accountManagement',
+        name: 'AccountManagement',
+        component: () => import('../views/AccountManagement.vue')
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({

@@ -50,6 +50,9 @@ const http = (method, url, options = {}) => {
       url: host + url,
       headers: newOptions.headers
     }
+    if (url === '/users/auth/avatar/' && method === 'post') {
+      obj.headers['Content-Type'] = 'multipart/form-data'
+    }
     if (method === 'get') {
       obj.params = options
     } else {

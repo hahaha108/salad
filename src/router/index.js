@@ -35,7 +35,12 @@ const routes = [
     path: '/publish',
     name: 'PostPublish',
     component: () => import('../views/posts/PostPublish.vue')
-  }
+  },
+    {
+        path: '/user/settings/:id',
+        name: 'UserSettings',
+        component: () => import('../views/user/Settings.vue')
+    },
 ]
 
 const router = new VueRouter({

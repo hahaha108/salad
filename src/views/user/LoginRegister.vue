@@ -174,6 +174,8 @@ export default {
               if (res.code === 200) {
                 Message.success('登陆成功！')
                 this.getInfoAction()
+              } else {
+                  Message.error(res.message)
               }
             }).catch((err) => { err.message && Message.error(err.message) });
         } else {
